@@ -11,9 +11,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _dateFns2 = _interopRequireDefault(require("@date-io/date-fns"));
 
-var _MuiPickersUtilsProvider = _interopRequireDefault(require("@material-ui/pickers/MuiPickersUtilsProvider"));
-
-var _KeyboardDatePicker = _interopRequireDefault(require("@material-ui/pickers/KeyboardDatePicker"));
+var _pickers = require("@material-ui/pickers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -29,9 +27,9 @@ function TimeInput(_ref) {
       label = _ref.label,
       others = _objectWithoutProperties(_ref, ["selectedDate", "setSelectedDate", "label"]);
 
-  return /*#__PURE__*/_react["default"].createElement(_MuiPickersUtilsProvider["default"], {
+  return /*#__PURE__*/_react["default"].createElement(_pickers.MuiPickersUtilsProvider, {
     utils: _dateFns2["default"]
-  }, /*#__PURE__*/_react["default"].createElement(KeyboardTimePicker, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_pickers.KeyboardTimePicker, _extends({
     label: label,
     value: selectedDate,
     onChange: setSelectedDate
